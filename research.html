@@ -3,90 +3,89 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Research portfolio of Xiaoqing Liu in computational materials science, machine learning interatomic potentials, catalysis, and battery interfaces.">
+    <meta name="description" content="Research portfolio of Xiaoqing Liu in computational materials science, machine-learned interatomic potentials, catalysis, and battery materials.">
     <title>Research | Xiaoqing Liu</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Newsreader:opsz,wght@6..72,500;6..72,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="site-shell">
-        <header class="page-header">
-            <a class="brand" href="index.html">
-                <span class="brand-mark">XL</span>
-                <span class="brand-copy">
+        <header class="site-header">
+            <div class="site-header-inner">
+                <a class="site-title" href="index.html">
                     <strong>Xiaoqing Liu</strong>
-                    <small>Computational Materials Scientist</small>
-                </span>
-            </a>
-            <nav class="site-nav" aria-label="Primary">
-                <a href="index.html">About</a>
-                <a aria-current="page" href="research.html">Research</a>
-                <a href="publications.html">Publications</a>
-            </nav>
+                    <span>LIU XIAOQING | 刘晓庆</span>
+                </a>
+                <nav class="site-nav" aria-label="Primary">
+                    <a href="index.html">About</a>
+                    <a aria-current="page" href="research.html">Research</a>
+                    <a href="publications.html">Publications</a>
+                </nav>
+            </div>
         </header>
 
-        <main>
+        <main class="site-main">
             <section class="page-intro">
-                <p class="eyebrow">Research Portfolio</p>
-                <h1>Research directions connecting atomistic detail with scalable discovery</h1>
-                <p>The projects below reflect a common objective: making computational materials research faster, more transferable, and more physically trustworthy across complex energy-relevant systems.</p>
+                <p class="page-kicker">Research</p>
+                <h1>Research Directions</h1>
+                <p class="page-subtitle">My work sits at the intersection of atomistic simulation, machine learning, and computational materials design.</p>
+                <p>I am particularly interested in methods that are both scientifically grounded and practically deployable, especially for heterogeneous energy materials and chemically complex interfaces.</p>
             </section>
 
-            <section class="theme-grid">
-                <article class="theme-card">
-                    <p class="theme-number">01</p>
+            <section class="content-section research-list">
+                <article class="research-entry">
+                    <p class="entry-number">01</p>
                     <h2>Fine-tuning universal machine-learned interatomic potentials</h2>
-                    <p>I study how foundation atomistic models can be adapted to specific materials systems without losing robustness. This includes optimizer benchmarking, transferability analysis, data efficiency, and long-timescale molecular dynamics stability.</p>
-                    <p class="theme-meta">Representative methods: MACE, NequIP, CHGNet, PyTorch fine-tuning, uncertainty-aware validation.</p>
+                    <p>I study how pre-trained atomistic foundation models can be adapted to specific materials systems without sacrificing transferability or simulation stability. This includes benchmarking training strategies, optimizer effects, and long-timescale molecular dynamics performance.</p>
+                    <p class="entry-meta">Representative methods: MACE, NequIP, CHGNet, PyTorch fine-tuning, validation across structures and trajectories.</p>
                 </article>
 
-                <article class="theme-card">
-                    <p class="theme-number">02</p>
-                    <h2>Single-atom and multi-atom catalysts for energy conversion</h2>
-                    <p>I use density functional theory and AI-assisted workflows to probe adsorption energetics, spin states, reaction pathways, and structure-function relationships in catalytic systems relevant to OER, ORR, and electrochemical conversion.</p>
-                    <p class="theme-meta">Representative systems: C2N-supported transition metals, heterogeneous catalytic interfaces, reaction intermediates.</p>
+                <article class="research-entry">
+                    <p class="entry-number">02</p>
+                    <h2>Catalysis and reaction mechanism modeling</h2>
+                    <p>I use density functional theory and computational screening to investigate adsorption energetics, active-site behavior, and reaction pathways in electrocatalytic and photocatalytic materials. My goal is to connect atomic-scale descriptors with catalytic performance.</p>
+                    <p class="entry-meta">Representative topics: OER, ORR, hydrogen evolution, single-atom catalysts, heterostructured photocatalysts.</p>
                 </article>
 
-                <article class="theme-card">
-                    <p class="theme-number">03</p>
-                    <h2>Battery interfaces and solid-state transport phenomena</h2>
-                    <p>My work explores how interfacial structure and local chemistry affect ionic transport, mechanical stability, and degradation in next-generation battery materials. I combine first-principles calculations with accelerated simulations to study interface evolution at scale.</p>
-                    <p class="theme-meta">Representative systems: Li-S batteries, solid-state electrolytes, heterointerfaces, defect-mediated transport.</p>
+                <article class="research-entry">
+                    <p class="entry-number">03</p>
+                    <h2>Battery interfaces and ionic transport</h2>
+                    <p>My research examines how local structure, chemistry, and defects shape transport and stability in battery materials. I am especially interested in solid-state interfaces, interface reconstruction, and the role of atomistic AI models in extending accessible simulation scales.</p>
+                    <p class="entry-meta">Representative systems: solid-state batteries, Li-S chemistry, heterointerfaces, defect-mediated transport.</p>
                 </article>
 
-                <article class="theme-card">
-                    <p class="theme-number">04</p>
-                    <h2>High-throughput and reproducible computational workflows</h2>
-                    <p>Beyond individual projects, I care about workflow design: reproducible dataset preparation, HPC execution, evaluation pipelines, and visual communication that make complex atomistic studies easier to reuse and extend.</p>
-                    <p class="theme-meta">Representative tools: SLURM, Python automation, OVITO, VESTA, publication-quality scientific graphics.</p>
+                <article class="research-entry">
+                    <p class="entry-number">04</p>
+                    <h2>Reproducible computational workflows</h2>
+                    <p>Beyond individual applications, I care about workflow design: dataset preparation, automated evaluation, HPC execution, and structured visualization. I value research pipelines that are transparent, reusable, and easy for others to build on.</p>
+                    <p class="entry-meta">Representative tools: Python automation, SLURM workflows, data curation, publication-ready scientific visualization.</p>
                 </article>
             </section>
 
-            <section class="section-block section-split">
+            <section class="content-section two-column">
                 <div>
-                    <p class="eyebrow">Cross-Cutting Interests</p>
-                    <h2>Questions that recur across projects</h2>
-                    <div class="tag-list">
-                        <span class="tag">Model transferability</span>
-                        <span class="tag">Long-range physics</span>
-                        <span class="tag">Data efficiency</span>
-                        <span class="tag">Interfacial stability</span>
-                        <span class="tag">Reaction energetics</span>
-                        <span class="tag">Workflow reproducibility</span>
-                    </div>
+                    <h2>Cross-Cutting Questions</h2>
+                    <ul class="plain-list">
+                        <li>How can atomistic foundation models be made more reliable for out-of-domain systems?</li>
+                        <li>What validation is needed before MLIPs are trusted in production research workflows?</li>
+                        <li>How can interface physics be captured without losing computational efficiency?</li>
+                    </ul>
                 </div>
-                <div class="spotlight-card">
-                    <p class="eyebrow">Working Style</p>
-                    <h3>Bridging theory, automation, and communication</h3>
-                    <p>I value research outputs that are not only accurate, but also reusable: clean datasets, transparent training choices, interpretable validation, and visual summaries that make the science easier to build on.</p>
+                <div>
+                    <h2>Working Principles</h2>
+                    <ul class="plain-list">
+                        <li>Physics-aware model development</li>
+                        <li>Clear and reproducible computational pipelines</li>
+                        <li>Methods that remain useful beyond a single case study</li>
+                    </ul>
                 </div>
             </section>
         </main>
 
-        <footer class="page-footer">
-            <p>&copy; 2026 Xiaoqing Liu. Built as a static academic website for GitHub Pages.</p>
+        <footer class="site-footer">
+            <p>&copy; 2026 Xiaoqing Liu</p>
         </footer>
     </div>
 </body>
