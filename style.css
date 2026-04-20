@@ -238,6 +238,23 @@ code {
     max-width: 72ch;
 }
 
+.timeline-list {
+    max-width: 78ch;
+}
+
+.timeline-item {
+    font-size: 1.05rem;
+}
+
+.timeline-item + .timeline-item {
+    margin-top: 16px;
+}
+
+.timeline-date {
+    color: var(--text);
+    font-weight: 700;
+}
+
 .feature-list {
     display: grid;
     gap: 18px;
