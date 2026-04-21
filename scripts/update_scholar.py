@@ -25,6 +25,7 @@ class Publication:
     authors: str
     venue: str
     year: int | None
+    url: str | None = None
 
 
 def require_env(name: str) -> str:
@@ -69,12 +70,15 @@ def fetch_publications(scholar_id: str) -> list[Publication]:
             bib.get("publisher"),
             bib.get("venue"),
         )
+        raw_url = publication.get("pub_url") or publication.get("eprint_url")
+        url = str(raw_url).strip() if raw_url else None
         publications.append(
             Publication(
                 title=title,
                 authors=authors,
                 venue=venue,
                 year=parse_year(bib.get("pub_year")),
+                url=url,
             )
         )
 
@@ -106,11 +110,15 @@ def render_publications(publications: list[Publication]) -> str:
     parts: list[str] = []
     for year, items in groups.items():
         parts.append('<section class="publication-year-group">')
-        parts.append(f'    <h3 class="publication-year">{html.escape(year)}</h3>')
+        parts.append(f'    <h2 class="publication-year">{html.escape(year)}</h2>')
         parts.append('    <ol class="publication-list">')
         for item in items:
             parts.append('        <li class="publication-item">')
-            parts.append(f'            <h4 class="publication-title">{html.escape(item.title)}</h4>')
+            if item.url:
+                title_html = f'<a href="{html.escape(item.url)}" target="_blank" rel="noopener noreferrer">{html.escape(item.title)}</a>'
+            else:
+                title_html = html.escape(item.title)
+            parts.append(f'            <h3 class="publication-title">{title_html}</h3>')
             parts.append(f'            <p class="publication-authors">{html.escape(item.authors)}</p>')
             parts.append(
                 f'            <p class="publication-meta">{html.escape(item.venue)}'
