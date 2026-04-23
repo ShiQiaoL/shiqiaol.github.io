@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import html
+import json
 import os
 import re
 import sys
@@ -92,6 +93,24 @@ def fetch_publications(scholar_id: str) -> list[Publication]:
     return publications
 
 
+def build_scholarly_article_jsonld(item: Publication) -> str:
+    author_list = [name.strip() for name in re.split(r",|\band\b", item.authors) if name.strip()]
+    data: dict[str, Any] = {
+        "@context": "https://schema.org",
+        "@type": "ScholarlyArticle",
+        "headline": item.title,
+        "name": item.title,
+        "author": [{"@type": "Person", "name": name} for name in author_list],
+    }
+    if item.year:
+        data["datePublished"] = str(item.year)
+    if item.venue and item.venue != "Venue unavailable":
+        data["isPartOf"] = {"@type": "Periodical", "name": item.venue}
+    if item.url:
+        data["url"] = item.url
+    return json.dumps(data, ensure_ascii=False)
+
+
 def render_publications(publications: list[Publication]) -> str:
     if not publications:
         return textwrap.dedent(
@@ -125,6 +144,8 @@ def render_publications(publications: list[Publication]) -> str:
                 + (f" · {item.year}" if item.year else "")
                 + "</p>"
             )
+            jsonld = build_scholarly_article_jsonld(item)
+            parts.append(f'            <script type="application/ld+json">{jsonld}</script>')
             parts.append("        </li>")
         parts.append("    </ol>")
         parts.append("</section>")
